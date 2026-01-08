@@ -1,4 +1,6 @@
-"use client"; 
+"use client";
+
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -67,44 +69,63 @@ export default function Home() {
           </p>
         ) : (
           pokemonList.map((pokemon) => (
-            <div
+            <motion.div
               key={pokemon.id}
-              className="relative group overflow-hidden rounded-2xl p-5 shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer border border-white/10"
-              style={getTypeGradient(pokemon.types)}
+              initial={{ perspective: 1000 }}
+              whileHover={{
+                scale: 1.05,
+                rotateX: 20, // Etwas stärker für besseren Effekt
+                rotateY: 20,
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="relative rounded-2xl p-5 shadow-xl cursor-pointer border border-white/10"             
+              style={{
+                ...getTypeGradient(pokemon.types),
+                transformStyle: "preserve-3d", // DAS ist entscheidend für den 3D-Inhalt
+              }}
             >
-              <span className="absolute top-2 right-4 text-white/30 font-bold text-xl">
-                #{String(pokemon.id).padStart(3, "0")}
+              {/* ID im Hintergrund - bleibt flach auf der Karte */}
+              <span className="absolute top-2 right-4 text-white/20 font-bold text-2xl select-none">
+                #{String(pokemon.id).padStart(3, '0')}
               </span>
 
-              <div className="flex flex-col items-center">
-                <img
-                  src={pokemon.image}
+              {/* Dieser Container hält das Bild und den Namen und hebt sie ab */}
+             <div 
+                className="flex flex-col items-center justify-center min-h-[180px]" 
+                style={{ 
+                transform: "translateZ(10px)", // Extrem hoher Wert zum Testen
+                transformStyle: "preserve-3d",
+                backfaceVisibility: "hidden"
+                }}
+              >
+                <img 
+                  src={pokemon.image} 
                   alt={pokemon.germanName}
-                  className="w-32 h-32 object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)] group-hover:drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)] transition-all"
-                />
+                  className="w-32 h-32 object-contain"
+                  style={{ 
+                  transform: "translateZ(50px)", // Das Bild springt nochmal weiter vor
+                  filter: "drop-shadow(0 25px 25px rgba(0,0,0,0.5))" 
+                }}
+              />
+
+              <div style={{ transform: "translateZ(30px)" }} className="text-center">
                 <h2
-                  className={`mt-4 text-2xl font-bold drop-shadow-md 
-        ${
-          ["electric", "ice", "bug"].includes(pokemon.types[0])
-            ? "text-slate-900"
-            : "text-white"
-        }`}
-                >
+                  className={`mt-4 text-2xl font-bold drop-shadow-md ${["electric", "ice", "bug", "fairy", "normal", "flying"].includes(pokemon.types[0]) ? "text-slate-900" : "text-white"}`}>
                   {pokemon.germanName}
                 </h2>
-
-                <div className="flex gap-2 mt-2">
+              
+                <div className="flex gap-2 mt-2 justify-center">
                   {pokemon.types.map((type) => (
                     <span
                       key={type}
-                      className="px-3 py-1 bg-white/20 rounded-full text-xs text-white capitalize backdrop-blur-md"
-                    >
+                      className={`px-3 py-1 bg-white/20 rounded-full text-xs capitalize backdrop-blur-md border border-white/5 ${["electric", "ice", "bug", "fairy", "normal", "flying"].includes(pokemon.types[0]) ? "text-slate-900" : "text-white"}`}>
                       {type}
                     </span>
                   ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))
         )}
       </section>
