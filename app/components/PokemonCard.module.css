@@ -1,12 +1,9 @@
-/* src/components/PokemonCard.module.css */
-
 .cardContainer {
   position: relative;
-  border-radius: 1.5rem; /* rounded-3xl */
+  border-radius: 1.5rem; 
   padding: 1.5rem;
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  /* transition: all 0.3s ease; */
   transform-style: preserve-3d;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
@@ -35,7 +32,6 @@
   height: 10rem;
   object-fit: contain;
   transform: translateZ(60px);
-  /* Wir nutzen hier normales CSS für den Schatten */
   filter: drop-shadow(0 20px 20px rgba(0,0,0,0.5));
 }
 

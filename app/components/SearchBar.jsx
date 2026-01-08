@@ -13,7 +13,6 @@ export default function SearchBar({ searchTerm, setSearchTerm }) {
     <div className="sticky top-0 z-[100] w-full py-4 bg-slate-900/80 backdrop-blur-xl border-b border-white/10 shadow-xl">
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
         
-        {/* Suchfeld */}
         <input 
           type="text" 
           style={{ fontFamily: 'Atma, sans-serif' }}
@@ -23,7 +22,6 @@ export default function SearchBar({ searchTerm, setSearchTerm }) {
           className="w-full max-w-2xl p-3 rounded-xl bg-slate-800/50 border border-white/10 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all text-white text-lg shadow-inner"
         />
 
-        {/* Filter-Leiste */}
         <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar justify-start md:justify-center w-full px-2">
           <button 
             onClick={() => setSearchTerm("")} 

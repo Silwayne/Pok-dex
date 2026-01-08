@@ -32,10 +32,9 @@ body {
   font-style: normal;
 }
 
-/* Deine CSS Klasse für das Logo */
 .pkm-font {
     font-family: "PokemonSolid", sans-serif;
-    color: #ffcb05; /* Das typische Pokémon-Gelb */
+    color: #ffcb05; 
     text-shadow: 
       -3px -3px 0 #3c5aa6, 
        3px -3px 0 #3c5aa6, 
