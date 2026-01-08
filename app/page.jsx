@@ -5,6 +5,7 @@ import PokemonCard from "./components/PokemonCard";
 import HeaderLogo from "./components/HeaderLogo";
 import SearchBar from "./components/SearchBar";
 import PokemonModal from "./components/PokemonModal";
+import Footer from "./components/Footer";
 
 const BASE_COLORS = {
   grass: "#087708", fire: "#FF0000", water: "#0000FF", bug: "#90EE90",
@@ -120,6 +121,7 @@ export default function Home() {
       <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="cursor-pointer px-6 py-2 bg-slate-800/50 rounded-full border border-slate-700 text-slate-300 hover:text-white shadow-lg fixed bottom-8 right-8 hover:scale-110 transition-all">
         Nach oben
       </button>
+      <Footer />
       {selectedPokemon && (
         <PokemonModal 
           pokemon={selectedPokemon} 
