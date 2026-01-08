@@ -20,14 +20,14 @@ body {
 
 @font-face {
   font-family: 'PokemonSolid';
-  src: url('/fonts/Pokemon Solid.ttf') format('truetype');
+  src: url('/Pokedex/fonts/Pokemon Solid.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Atma';
-  src: url('/fonts/Atma-Regular.ttf') format('truetype');
+  src: url('/Pokedex/fonts/Atma-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

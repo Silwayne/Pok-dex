@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Impressum | Mein Pokédex",
+};
+
 export default function Impressum() {
   return (
     <main className="min-h-screen bg-slate-900 text-white flex flex-col items-center p-10">

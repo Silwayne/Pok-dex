@@ -55,7 +55,7 @@ export default function PokemonCard({ pokemon, onCardClick }) {
                 key={type}
                 className={`flex items-center text-[20px] gap-2 px-5 py-3 capitalize ${textColor}`}
               >
-                <img src={`/images/${type}.png`} alt={type} className="w-5 h-5 object-contain" />
+                <img src={`/Pokedex/images/${type}.png`} alt={type} className="w-5 h-5 object-contain" />
                 {type}
               </span>
             ))}

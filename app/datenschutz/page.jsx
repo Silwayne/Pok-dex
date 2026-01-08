@@ -1,9 +1,12 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Datenschutz | Mein Pokédex",
+};
+
 export default function Datenschutz() {
   return (
     <main className="min-h-screen bg-slate-900 text-white flex flex-col items-center p-10">
-      {/* Hintergrund-Deko */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-blue-900/10 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-[10%] -right-[10%] w-[30%] h-[40%] bg-red-900/10 rounded-full blur-[120px]"></div>

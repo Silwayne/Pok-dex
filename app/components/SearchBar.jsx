@@ -40,7 +40,7 @@ export default function SearchBar({ searchTerm, setSearchTerm }) {
               }} 
               className="min-w-[45px] h-10 rounded-xl border-2 transition-all hover:scale-110 flex items-center justify-center shadow-lg"
             >
-              <img src={`/images/${type}.png`} alt={type} className="w-6 h-6 object-contain" />
+              <img src={`/Pokedex/images/${type}.png`} alt={type} className="w-6 h-6 object-contain" />
             </button>
           ))}
         </div>
