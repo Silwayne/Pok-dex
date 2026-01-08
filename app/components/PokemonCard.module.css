@@ -1,0 +1,56 @@
+/* src/components/PokemonCard.module.css */
+
+.cardContainer {
+  position: relative;
+  border-radius: 1.5rem; /* rounded-3xl */
+  padding: 1.5rem;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* transition: all 0.3s ease; */
+  transform-style: preserve-3d;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.idBadge {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-weight: 900;
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+.innerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  transform: translateZ(50px);
+  transform-style: preserve-3d;
+}
+
+.pokemonImg {
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+  transform: translateZ(60px);
+  /* Wir nutzen hier normales CSS für den Schatten */
+  filter: drop-shadow(0 20px 20px rgba(0,0,0,0.5));
+}
+
+.pokemonName {
+  font-family: 'Atma', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  transform: translateZ(40px);
+}
+
+.typeContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  transform: translateZ(30px);
+}

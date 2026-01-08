@@ -5,13 +5,6 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -23,4 +16,31 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'PokemonSolid';
+  src: url('/fonts/Pokemon Solid.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Atma';
+  src: url('/fonts/Atma-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Deine CSS Klasse für das Logo */
+.pkm-font {
+    font-family: "PokemonSolid", sans-serif;
+    color: #ffcb05; /* Das typische Pokémon-Gelb */
+    text-shadow: 
+      -3px -3px 0 #3c5aa6, 
+       3px -3px 0 #3c5aa6, 
+      -3px  3px 0 #3c5aa6, 
+       3px  3px 0 #3c5aa6, 
+       0px  0px 15px rgba(60, 90, 166, 0.7);
+    letter-spacing: 4px;
 }
